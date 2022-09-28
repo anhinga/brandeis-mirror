@@ -1,0 +1,37 @@
+
+Michael Bukatin, Nokia Corporation, Cambridge, MA
+
+"Progress report on partial inconsistency, bitopology, and vector semantics"
+
+Joint work with Ralph Kopperman and Steve Matthews
+
+Abstract:
+
+In the first part of this talk, we review the partial inconsistency
+landscape with the emphasis on the fact that Scott domains tend to
+become embedded into vector spaces in presence of partial inconsistency,
+revisit partially inconsistent interval numbers [R] which are obtained
+by adjoining formal pseudosegments [a, b] with the contradictory
+property that b < a to the ordinary interval numbers, and review the
+Lawvere duality between generalized distances and multivalued predicates,
+focusing on the case when these distances and predicates
+are valued in the domain of arrows.
+
+We revisit the isomophism between [R] with the added "infinity crust"
+and the d-frame LU of the (lower, upper) bitopology on reals,
+show that any (lower, upper)-valued bitopology can be understood as
+a topology valued in LU, hence a topology valued in [R],
+and revisit anti-monotonic group negation and
+[R]-valued partial metrics in connection with
+the role played by the domain of arrows.
+
+In the second part of the talk, we focus on the linear models
+of computations, and in particular on the situations when
+linear combinations of actual computational processes are well
+defined. We revisit sampling semantics and generalized animations,
+discuss the links between probabilistic programming and evolutionary
+algorithms, discuss hybrid computational architectures
+between linear models and traditional programs, and review
+the recent advances in generative models produced by generative
+models ("sampling the samplers" paradigm).
+
