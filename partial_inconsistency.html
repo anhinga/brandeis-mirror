@@ -1,0 +1,274 @@
+<html>
+<head>
+<TITLE> Michael Bukatin - Partial Inconsistency </TITLE>
+</head>
+
+<body>
+
+<H1 align=center>Partial Inconsistency and Vector Semantics of Programming Languages</H1>
+
+<HR>
+<HR>
+<HR>
+
+<P>
+This page timeline goes back to 2012-2013, and starts with an observation that
+for approximation domains to become vector spaces it is necessary to have enough
+overdefined (that is, partially inconsistent) elements to cancel on addition
+with underdefined (partially defined) elements to produce zero.
+</P>
+
+<P>
+A rich mathematical theory (<strong>partial inconsistency landscape</strong>) results from this observation. 
+</P>
+
+<P>
+Then in 2014 this page
+progresses towards studying computations with <strong>linear streams</strong>. In 2015 we understand
+that if one maintains a discipline of interleaving linear and non-linear transformations,
+large classes of programs are parametrized by matrices of numbers. (We call
+this architecture <strong>dataflow matrix machines</strong> in 2016). 
+Our first related software prototypes appear in 2015 and our GCAI 2015 paper is published.
+</P>
+
+<P>In 2016 we realize that dataflow matrix machines can be viewed as <strong>generalized recurrent neural networks</strong> and
+study them as a model of computation and as a programming architecture. Starting from
+the Fall of 2016, we create a particularly elegant flavor of dataflow matrix machines
+based on the vector space of finite prefix trees with numerical leaves and variadic neurons
+and create a Clojure implementation of the core primitives for this flavor of
+dataflow matrix machines.
+</P>
+<HR>
+
+<P>Our new paper: Michael Bukatin and Jon Anthony. <A HREF="https://arxiv.org/abs/1712.07447">Dataflow 
+Matrix Machines and V-values: a Bridge between Programs and Neural Nets</A>. 
+In "K + K = 120" Festschrift, 2017.
+</P>
+
+<HR>
+<HR>
+<HR>
+
+<H3 align=center>Partial inconsistency landscape</H3>
+
+<P>
+Partial inconsistency, bilattices, ordered Banach spaces of signed measures, 
+negative probabilities, negative self-distances in partial metrics,
+probabilistic programming, vector space semantics of programming languages, 
+non-monotonic inference, and bitopology seem to play nicely together here.
+</P>
+
+<P>
+It seems that the main cornerstones here are the ability to
+extend some Scott domains to groups and vector spaces,
+and the "bilattice pattern".
+</P>
+
+<HR>
+
+Our Tbilisi paper: Michael Bukatin and Steve Matthews.
+<A HREF="https://easychair.org/publications/paper/Q4lW">Linear Models of Computation and Program Learning.</A>
+GCAI 2015, <I>EasyChair Proceedings in Computing</I>, <STRONG>36</STRONG>, 66-78.
+
+<HR>
+
+<H3 align=center>Brief summary</H3>
+
+<P>There are two motivations for this line of research. One is the desire to handle partially contradictory and inconsistent information. Another is the desire to have algebraic structure of groups and of vector spaces on partially defined elements (and on programs).</P>
+
+
+<P>Both motivations lead to very rich mathematical phenomena and bring together a number of earlier studies done by various researchers. The spaces of partially defined elements are enriched with over-defined elements. Expressions of partial inconsistency include negative probabilities and segments of negative length. The motive of decompositions into positive and negative parts is quite ubiquitous in this context. Non-monotonic and anti-monotonic inference make appearances. Interval numbers enriched with segments of negative length form a group. Probabilistic programs denote linear operators when one allows the measures to take not only positive, but also negative values. Bilattices and bitopologies, paraconsistent and modal logic, and ``possible worlds" models make multiple appearances.<P> 
+
+<P>Many of these ideas are not new. What seems to be new is the realization that this variety of ideas forms a unified landscape where various parts interplay each other in many interesting and intricate ways. This field seems to be well-positioned for rapid mathematical development and for emergence of various applications including better handling of inconsistency in databases, better handling of non-monotonic reasoning and reasoning with contradictory information in AI, better schemes for probabilistic programming, and better machine learning schemes over spaces of programs. The classes of computations which admit taking linear combinations of execution runs, such as probabilistic sampling and generalized animation, are of particular
+interest in connection with better schemes for program learning.</P>
+
+<HR>
+
+<P> The slides for my talk at CCNY Joint Math-CS
+Colloquium, April 11, 2013: 
+<A HREF="PartialInconsistencyApr13.pdf">Partial inconsistency and
+mathematics of software</A> (joint work with Ralph Kopperman and 
+Steve Matthews).
+</P>
+
+<P>
+(Also, the slides for my talk at
+the "Conference on generalized metrics for limits, 
+computing, and more" at Medgar Evers College of CUNY, April 10, 2013: <A HREF="CommonPatternsApr13.pdf">Looking for common patterns</A>.)
+</P>
+
+<P>The <A HREF="http://at.yorku.ca/cgi-bin/abstract/cbgy-77">abstract</A> and <A HREF="PartialInconsistencyJul24.pdf">slides</A> for my talk "Partial inconsistency landscape: an overview" on July 24, 2013 at 28th Summer Conference on Topology and its Applications in North Bay, Ontario.
+</P>
+
+<P> Michael Bukatin, Ralph Kopperman, and Steve Matthews.
+<A HREF="PartiallyInconsistentIntervalNumbers.pdf">Remarks on Partially Inconsistent Interval Numbers</A>.
+Preprint, November 26, 2013. (Lightly edited on June 25, 2014.)
+</P>
+
+<HR>
+
+<P>Here we start talking about potential applications of 
+vector semantics to program learning.</P>
+
+<HR>
+
+<P> Michael Bukatin, Ralph Kopperman, and Steve Matthews.
+<A HREF="PartialInconsistencyAndVectorSemantics.pdf">Partial Inconsistency and Vector Semantics</A>.
+Preprint, March 14, 2014. (Lightly edited on June 25, 2014.)
+</P>
+
+
+<P>The <A HREF="http://at.yorku.ca/cgi-bin/abstract/cbjp-08">abstract</A> for my talks "Partial inconsistency, bitopology, and vector semantics" on July 24, 2014 at 29th Summer Conference on Topology and its Applications in Staten Island, New York.
+</P>
+
+<P>The <A HREF="PartialInconsistencyBitopologyJul242014.pdf">slides</A> for the first of these talks, "Partial inconsistency and bitopology".
+</P>
+
+<P>The <A HREF="VectorSemanticsJul242014.pdf">slides</A> for the second of these talks, "Partial inconsistency and vector semantics: sampling, animation, and program learning".
+</P>
+
+<HR>
+
+<P>
+The <A HREF="PartialInconsistencyProgressNov2014.txt">abstract</A> and the <A HREF="PartialInconsistencyProgressNov2014.pdf">slides</A> for my talk
+"Progress report on partial inconsistency, bitopology, and vector semantics" on November 7, 2014
+at a conference on Computational Topology and Its Applications in Kent, Ohio.
+</P>
+
+<HR>
+
+<H3 align=center>Linear combinations of computations</H3>
+
+
+<P>I know two classes of computations which admit taking linear combinations of execution runs:</P>
+<UL>
+<LI>Probabilistic sampling (for linear combinations with positive coefficients; one should allow negative probabilities/negative sampling channel in order to allow negative coefficients);
+<LI>Generalized animation (the set of pixels does not have to form a discretized rectangle, but can generally admit any secondary structure over pixels).
+</UL>
+<P>Classes of computations which admit taking linear combinations of execution runs are of particular interest in connection with better schemes for program learning.</P>
+
+<P> Michael Bukatin and Steve Matthews.
+<A HREF="LinearModelsProgramLearning.pdf">Linear Models of Computation and Program Learning</A>.
+Preprint, April 6, 2015.  (Lightly edited on May 30, 2015.)  
+</P>
+
+<P>Accepted for publication at <A HREF="http://easychair.org/smart-program/GCAI2015/">GCAI 2015</A>
+(<A HREF="http://easychair.org/publications/volume/GCAI_2015">Proceedings</A>) on August 10, 2015. <A HREF="LinearModelsProgramLearningGCAI.pdf">The final version</A> (September 3, 2015). <A HREF="LinearModelsGCAIOct2015.pdf">The slides for GCAI talk</A>.</P> 
+
+<HR>
+
+<H3 align=center>Almost continuous transformations of dataflow programs</H3>
+
+<P> Michael Bukatin and Steve Matthews.
+<A HREF="HigherOrderDataFlow.pdf">Almost Continuous Transformations of Software and Higher-order Dataflow Programming</A>.
+Preprint, July 9, 2015.
+</P>
+
+<HR>
+
+<H3 align=center>Dataflow Graphs as Matrices</H3>
+
+<P> Michael Bukatin and Steve Matthews.
+<A HREF="DataFlowGraphsAsMatrices.pdf">Dataflow Graphs as Matrices and Programming with Higher-order Matrix Elements</A>.
+Preprint, August 20, 2015. (Section 4.1 added on August 27, 2015.)
+<HR>
+
+<P>The <A HREF="http://www.nepls.org/Events/28/abstracts.html#bukatin">abstract</A> and <A HREF="LinearModelsNeplsNov2015.pdf">slides</A> for my talk, "Linear Models of Computation and Parametrization of Large Classes of Programs by Matrices", at <A HREF="http://www.nepls.org/Events/28/">NEPLS 28</A> on November 10, 2015.
+</P>
+
+<HR>
+
+<H3 align=center>Dataflow Matrix Machines as a Generalization of Recurrent Neural Networks</H3>
+
+<P><A HREF="https://arxiv.org/abs/1603.09002">https://arxiv.org/abs/1603.09002</A></P>
+
+<P><A HREF="https://arxiv.org/abs/1605.05296">https://arxiv.org/abs/1605.05296</A></P>
+
+<P><A HREF="https://arxiv.org/abs/1606.09470">https://arxiv.org/abs/1606.09470</A>
+</P>
+
+<P><A HREF="https://arxiv.org/abs/1610.00831">https://arxiv.org/abs/1610.00831</A>
+</P>
+
+<HR>
+
+<P>The series of 4 preprints above is joint work by Michael Bukatin, Steve Matthews, and Andrey Radul. This material was presented during the following two talks:
+</P>
+
+<P>The <A HREF="http://at.yorku.ca/cgi-bin/abstract/cbnc-60">abstract</A> and <A HREF="VectorSemanticsDMMsAug2016.pdf">slides</A> for my talk "Vector semantics: from partial inconsistency and bitopology to recurrent neural networks and self-referential dataflow matrix machines" on August 2, 2016 at 31st Summer Conference on Topology and its Applications in Leicester, England.</P>
+
+
+<P>The <A HREF="http://www.nepls.org/Events/30/abstracts.html#bukatin">abstract</A> and <A HREF="SelfReferentialDMMsOct2016.pdf">slides</A> for my talk, "Self-referential Mechanism for Dataflow Matrix Machines and Generalized Recurrent Neural Networks", at <A HREF="http://www.nepls.org/Events/30/">NEPLS 30</A> on October 7, 2016.
+</P>
+
+<HR>
+
+<H3 align=center>Dataflow Matrix Machines in Clojure</H3>
+
+<P>Clojure inspired us to consider a version of dataflow matrix machines based on the vector space of finite prefix trees with numerical leaves and variadic neurons.
+</P>
+
+<P>Michael Bukatin and Jon Anthony. <A HREF="dmm_learn_aut.pdf">Dataflow Matrix Machines as a Model of Computations with Linear Streams</A>. Preprint, Apr. 8-9, 2017; minor corrections: Apr. 14 - May 1, 2017. To appear at <A HREF="https://learnaut.wordpress.com/program/">LearnAut 2017</A>.
+</P>
+
+<P>arXiv version: <A HREF="https://arxiv.org/abs/1706.00648">https://arxiv.org/abs/1706.00648</A>
+</P>
+
+<P>The <A HREF="http://at.yorku.ca/cgi-bin/abstract/cbns-16">abstract</A> and <A HREF="DMMsPrefixTreesMar2017.pdf">slides</A> for my talk "Vector space of finite prefix trees for dataflow matrix machines" on March 10, 2017 at 51st Spring Topology and Dynamical Systems Conference in Jersey City, New Jersey.
+<A HREF="http://public.fotki.com/Anhinga/jersey-city-conference/">Photos</A> of the whiteboard and the background of the conference (originals are downloadable).
+</P>
+
+<P>
+<A HREF=
+"https://www.microsoft.com/en-us/research/event/new-england-machine-learning-day-2017/">NEML 2017</A>: 
+<A HREF="dmm-neml2017-abstract.txt">abstract</A> and 
+<A HREF="dmm-neml2017-poster.pdf">poster</A> (May 12, 2017).
+</P>
+
+<P><A HREF="https://github.com/jsa-aerial/DMM/blob/master/doc/ClojureMeetupJul13-17.pdf">Slides</A>
+for our "Dataflow matrix machines and V-values" lightning talk at July 13, 2017 Boston Clojure meetup.
+</P>
+
+<HR>
+<HR>
+
+<H3 align=center>Reference paper on Dataflow Matrix Machines and V-values</H3>
+
+<P> Michael Bukatin and Jon Anthony. <A HREF="https://arxiv.org/abs/1712.07447">Dataflow 
+Matrix Machines and V-values: a Bridge between Programs and Neural Nets</A>. 
+In: Beáta Gyuris, Katalin Mády, and Gábor Recski, editors, 
+"K + K = 120: Papers dedicated to László Kálmán and András Kornai on the occasion of their 60th birthdays",
+Research Institute for Linguistics, Hungarian Academy of Sciences, 2017.
+</P>
+
+<P><A HREF="https://github.com/jsa-aerial/DMM/blob/master/Kalman-Kornai-workshop.md">Video and slides</A> of the associated talk.
+
+</P>
+
+<HR>
+<HR>
+
+<P>A one-page <A HREF="self-modifying-systems-primer-02-17.pdf">primer on self-modifying dynamical systems</A> (self-modifying neural nets/self-modifying continuous programs; February 26, 2017).
+</P>
+
+<HR>
+<HR>
+
+<P>A one-page <A HREF="dataflow-matrix-machines-2016.pdf">overview of dataflow matrix machines</A> (November 25, 2016).
+</P>
+
+<HR>
+<HR>
+
+<H3 align=center><A HREF="dmm_next.html">Dataflow Matrix Machines (since 2017)</A></H3>
+
+<HR>
+<HR>
+
+<ADDRESS>
+Back to <A HREF="papers.html">My Papers in Computer Science</A>
+</ADDRESS>
+
+</body>
+
+</html>
