@@ -1,0 +1,9 @@
+Dataflow Matrix Machines as a Model of Computations with Linear Streams
+
+Michael Bukatin (HERE Technologies), Jon Anthony (Boston College)
+
+Dataflow matrix machines are a generalization of recurrent neural networks based on arbitrary linear streams, neurons of variable input and output arity, a model of unbounded memory based on countable-sized weight-connectivity matrices with finite number of non-zero elements, and explicit self-referential facilities.
+
+Dataflow matrix machines are closer in expressivity to general-purpose programming platforms than recurrent neural networks, while retaining the key property of RNNs that large classes of programs can be parametrized by matrices of numbers, and therefore synthesizing appropriate matrices is sufficient to synthesize programs.
+
+The formalism based on streams of finite prefix trees with numerical leaves allows us to simplify and streamline the architecture of dataflow matrix machines. This formalism is used in our current implementation of the core primitives of dataflow matrix machines in Clojure.
