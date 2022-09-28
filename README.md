@@ -6,6 +6,8 @@ Starting from September 25, 2022:
   * edits to this website will be created here originally;
   * then backported to the original site.
   
-Current mirror: [resume_bukatin.html](https://anhinga.github.io/brandeis-mirror/resume_bukatin.html)
+Current mirror: 
+  * [resume_bukatin.html](https://anhinga.github.io/brandeis-mirror/resume_bukatin.html)
+  * [partial_inconsistency.html](partial_inconsistency.html)
 
 _Work in progress_
