@@ -7,7 +7,9 @@ Starting from September 25, 2022:
   * then backported to the original site.
   
 Current mirror: 
-  * [resume_bukatin.html](https://anhinga.github.io/brandeis-mirror/resume_bukatin.html)
+  * [resume_bukatin.html](resume_bukatin.html)
   * [partial_inconsistency.html](partial_inconsistency.html)
+  * [dmm_next.html](dmm_next.html)
+  * [distances_and_equalities.html](distances_and_equalities.html)
 
 _Work in progress_
