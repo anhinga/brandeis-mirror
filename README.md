@@ -11,5 +11,6 @@ Current mirror:
   * [partial_inconsistency.html](partial_inconsistency.html)
   * [dmm_next.html](dmm_next.html)
   * [distances_and_equalities.html](distances_and_equalities.html)
+  * [papers.html](papers.html)
 
 _Work in progress_
