@@ -1,0 +1,190 @@
+<html>
+
+<head>
+<TITLE> Mishka --- Neurons as Harmony Detectors </TITLE>
+</head>
+
+<body>
+<H3>Neural Cells as Harmony Detectors
+</H3> 
+
+<P>The issues of harmony have notably low profile in the
+current AI research. Meanwhile, when it comes to brain
+architecture, harmony plays the central role. As we hope
+to demonstrate in this essay, neural cells act primarily
+as local harmony detectors. On a less local scale,
+the consensus is that perceptions correspond to certain
+stable periodic patterns of neuron firing. A harmony-based
+architecture would probably be more successful than
+current AI paradigms.</P>
+
+<P>It would help here to recall the basics of neuron firing
+theory. In the rest state neuron membrane typically has electrochemical
+polarization potential of 70 millivolts. When the firing impulse comes
+to the neuron from another neuron via the corresponding
+synapse (the site of their connection), this polarization
+potential changes, typically by 1-2 millivolts or less.
+If the polarization potential decreases beyond the threshold
+of approximately 60 or 55 millivolts, the neuron fires,
+otherwise the polarization potential tends to rapidly relax to the
+original rest level of 70 millivolts.</P>
+
+<P>Hence, when the reception of an impulse via a synapse
+decreases the membrane polarization potential of the receiving
+neuron, we call this
+synaptic connection excitatory, because the decrease
+of the polarization potential makes it easier to fire
+for our neuron. Otherwise, the synaptic connection is
+called inhibitory. Because the reception of an impulse
+changes the polarization potential by at most
+2 millivolts and because the polarization potential
+tends to rapidly relax back to 70 millivolts, the neuron
+can fire only if it receives several (from 4 to more than
+a dozen) impulses via excitatory connections simultaneously
+or in a very quick succession.</P> 
+
+<P>Hence the neuron works as a detector of several excitatory
+impulses coming almost simultaneously. So we can say that
+the neuron detects the harmony between its incoming impulses.</P>
+
+<P>Now we shall turn to learning mechanisms in the brain,
+and observe that the local learning (on the level of
+one neuron) is directed towards detecting this harmony
+even better. As we have noted, the reception of an impulse
+changes the polarization potential usually by 2 millivolts or
+less. The actual value of this change is usually called
+<em>synaptic strength</em>. This value is not constant, but
+changes with time. This ability of synaptic strength to change is
+the key mechanism of neural learning and is called
+<em>synaptic plasticity</em>.</P>
+
+<P>The most typical rule of synaptic plasticity
+for excitatory connection works approximately as
+follows. If a neuron fires shortly after receiving
+an excitatory impulse (i.e. the excitatory impulse
+contributed to firing), then the synaptic strength of
+the corresponding connection increases. However,
+if an excitatory impulse along the connection
+received, but the firing did not happen soon after that, then
+the corresponding synaptic strength decreases.</P>
+
+<P>In other words, if the incoming firing was in
+harmony with other incoming firings (in sufficient
+harmony to cause the firing of our neuron), then
+the weight of the corresponding connection increases
+(our neuron is going to "pay more attention" to the
+"advice to fire" received via this connection).
+But if the incoming firing is not in sufficient
+harmony, our neuron tends to "pay less attention" to the
+future "advices
+to fire" from this source.</P>
+
+<P>So locally neural cells work as detectors of
+harmony between incoming impulses, and local learning
+is directed towards enhancing their function as
+such harmony detectors.</P>
+
+<HR>
+
+<strong>References and remarks:</strong> (added in November 2000)
+
+<P>[1] The source of all data is "Principles of Neural Science",
+Kandel E.R. et al (eds.), McGraw-Hill, 2000.</P>
+
+<P>[2] For a typical example of what is 
+wrong with AI neural nets see the popular
+<A HREF="http://www-hbp.usc.edu/_Documentation/NSL/Book/TOC.htm">Neural
+Simulation Language</A>.</P>
+
+<P>The neuron output is expressed via <em>firing rate</em>.
+Hence it is totally unsurprising that all harmony effects are
+missing. In fact, while some neurons
+capable of <em>temporal summation of received impulses</em>
+come back to the resting potential relatively slowly (20-100 msec),
+a typical neuron capable mostly of <em>spatial summation of
+received impulses</em> comes back to the resting potential
+very quickly (3-4 msec) [1]. At the same time [3] indicates that
+conscious perception is characterized by the typical firing
+rate of 40 Hertz and no more than 70 Hertz. Hence the intervals
+between impulses are typically 25 msec and no less than 12 msec
+in conscious perception. In such situation firing rates do not
+matter all that much, but what matters is whether the signals
+are in phase. This suggests one of key reasons of failure of
+AI neural nets to compete with biological neural nets so far.</P>
+
+<P>It is also unsurprising that such networks exhibit high
+<em>interference</em> --- it is virtually impossible to
+train them to solve several different problems at once.
+As long as it starts learning something new, it forgets
+the previous knowledge quickly (with some relative exceptions,
+like ART-based systems --- see Chapter 8 from the link above).
+After all, it is the non-interference, which is THE "holographic
+property", and we should expect the phase information to play
+the crucial role here.</P>
+
+<P>The typical training schemes are also flawed --- they are
+directed to globally optimize the network for one specific
+problem. This might work to obtain some ad hoc engineering
+solutions, but that's not how the nature works, and from
+the viewpoint of understanding and simulation of real
+biological neural systems it is a complete dead end.
+Equally bad is the widespread distinction between the "training
+mode", when the system learns, and the "working mode",
+when it does not change.</P>
+
+<P>Real biological systems learn as they work and always keep
+learning, they can absorb almost unlimited quantity of
+various memories and types of problems to solve with very
+little interference (unless you cram in too much in too
+short a period of time), and while they might have some
+specialized learning mechanisms for especially important
+survival tasks, overall their learning mechanisms seem
+to be quite general and not specialized for narrow types of tasks.</P>
+
+<P>These learning mechanisms are probably also some sort
+of harmony mechanisms, on the higher level, than a single neuron,
+but below the specific tasks. If the hypothesis of Crick and Koch [3]
+is right, the next level is those coordinated firings of neurons
+with the typical frequency of 40 Hertz (this characteristic
+value can vary between 30 and 70 Hertz). During such processes
+the whole groups of neurons seem to fire together. Since the typical
+difference in firing times of connected neurons should be in
+milliseconds (2-4 milliseconds seems typical), the typical chain for
+a cyclic signal should be from 3 to 15 neurons.</P>
+
+<P>It is not difficult to see, that local learning rules for
+single cells support the storage of such patterns very effectively
+(subject for another discourse). However, 
+I would conjecture that there are probably some
+even higher-level harmony mechanisms between this level and
+task-learning. So I suggest that learning of the specific
+tasks is the side-effect of a hierarchy of harmonization
+mechanisms.</P>
+
+<P>[3] Crick F., Koch.C. (1990) Towards a neurobiological
+theory of consciousness. Semin.Neurosci., <strong>2</strong>, 263-275.</P>
+
+<P>[4] See also references in <A HREF="consciousness_spectral.html">Spectral
+methods in the theory of consciousness</A> (added in July 2001).</P>
+<HR>
+
+<P> Mishka --- August 2000
+</P>
+
+<HR>
+
+<P> Copying of this and my other 
+<A HREF="consciousness_papers.html">papers on the science of
+consciousness</A>
+is allowed free of charge, provided that the texts and this notice are
+unaltered, and that no further restrictions on the subsequent free
+redistribution are imposed
+</P>
+
+<ADDRESS>
+Back to <A HREF="index.html">Mishka's home page</A>
+</ADDRESS>
+
+</body>
+
+</html>
