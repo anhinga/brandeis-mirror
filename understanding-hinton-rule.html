@@ -1,0 +1,206 @@
+<html>
+
+<head>
+<TITLE> Mishka --- Understandng a Hinton Rule </TITLE>
+</head>
+
+<body>
+<H3>Mishka -- Understanding a Hinton Rule -- March 26, 2017
+</H3> 
+
+<HR>
+
+<P>
+A remarkable rule by Geoffry Hinton allows to use spike-time-dependent
+plasticity and Hebbian learning in neural nets to perform weight updates guided by
+error gradients.
+</P>
+
+<P>
+The rule requires the derivative of a neuron output with respect to time
+to be proportional to the minus derivative of the error with respect to
+that neuron input.
+</P>
+
+<P>
+In practice, it is probably sufficient to simply have sufficiently pronounced
+negative correlation between  the derivative of a neuron output with respect to time
+and the derivative of the error with respect to that neuron input. At the very least,
+they should typically have different signs.
+</P>
+
+<P>
+The main mystery associated with this is where the correct derivatives of
+neuron outputs with respect to time would come from. In this essay we are trying
+to shed some light on that mystery.
+</P>
+
+<P>
+Think about neural computations as trying to correctly predict what the output
+of the neuron in question should be in a given situation. Then if one allows
+more time it should be possible to compute better prediction. <strong>
+Assume that the brain first computes the approximate prediction in the fastest
+possible time and then gradually refines it.</strong> That is, assume that
+the brain computes not a single prediction of the output firing rate, but
+a function which depends on time, where the prediction in question is improved
+as computation time increases from the <strong>t</strong> corresponding to the
+initial response to <strong>t+delta(t)</strong>. Then the derivative of
+the output firing rate with respect to time would be proportional to the
+prediction improvement, and therefore should have the right sign.
+</P>
+
+<HR>
+
+<P>Now let's look at all this in more details. As the main source, I am
+using a talk by Hinton, "Can the brain do back-propagation?",
+at
+Stanford Colloquium on Computer Systems on Apr. 27, 2016:
+<A HREF="https://www.youtube.com/watch?v=VIRCybGgHts">https://www.youtube.com/watch?v=VIRCybGgHts</A>
+</P>
+
+<P>There is also a slide deck for Hinton's invited talk at NIPS'2007
+Deep Learning Workshop:
+<A HREF="https://www.cs.toronto.edu/~hinton/backpropincortex2007.pdf">https://www.cs.toronto.edu/~hinton/backpropincortex2007.pdf</A>
+</P>
+
+<P>
+Several fairly compicated attempts to understand this better were made.
+The most well-known of those is, perhaps, Bengio et al.,
+"Towards Biologically Plausible Deep Learning",
+<A HREF="https://arxiv.org/abs/1502.04156">https://arxiv.org/abs/1502.04156</A>
+</P>
+
+<P>
+Here we are aiming for a much less sophisticated and more intuitive understanding of this.
+It should be enough to have a continuous family of circuits computing the
+output rate of the neuron in question, gradually improving the quality of prediction
+for the duration of a relatively small time interval. The update rule would aim
+at improving the quality of initial prediction, so we would like a situation where
+improvement of the quality of initial prediction would also translate to improvement
+of the quality of those predictions which take more time. 
+</P>
+
+<P>
+It might seem to be a not necessarily trivial task, especially given that we tend to
+think about neural circuits as discrete
+(formulated in terms of connections between particular neurons),
+and hence about computational time increasing
+in discrete increments.
+</P>
+
+<P>
+Fortunately, an earlier part of the same talk by Hinton gives us sufficient ingredients
+to build an example of a computational schema with required property.
+</P>
+
+<HR>
+
+Hinton overviews the essence of "dropout technique" as the schema which computes a whole
+ensemble of models regularized by shared weights, with the resulting "complete model" approximating
+a geometric mean of all the models in the ensemble, hence being related to 
+the "product of experts" scheme. The canonical paper for this is
+<A HREF="http://www.jmlr.org/papers/volume15/srivastava14a.old/source/srivastava14a.pdf">
+http://www.jmlr.org/papers/volume15/srivastava14a.old/source/srivastava14a.pdf</A>
+</P>
+
+<P>
+During each gradient training step we sample from that ensemble by supressing a randomly selected
+subset of neurons. Then we use the entire network post-training. 
+</P>
+
+<P>
+Hinton suggests that spikes produced by a Poisson process controlled by the output firing
+rate are used to sample a model from the ensemble in biological networks. Since in biological
+networks there is no difference between training and post-training, the same sampling by
+spikes is used to predict the optimal output firing rates of a neuron in question. <strong>And as
+one samples longer, the quality of prediction increases.</strong> Hence here we have
+an example of a situation we have been looking for: a circuit which gradually increases the
+prediction quality as it is given more time.
+</P>
+
+<HR>
+
+<P>
+(One can build further details into this framework, e.g. that late samples
+might be of higher quality, because they had more time to be formed, or
+that there is also a factor of "transition to the next perception or next
+response", with Hebbian rule applied to the formation of associative connections
+in addition to learning to produce a better quality response, etc.
+</P>
+
+<P>
+Of course, this explains why the system which has already learned something
+somewhat successfully would continue to learn, but it does not explain
+why it learns something in the first place. First of all, note that this
+"sampling by spikes from an ensemble of models" schema has very good
+generalization properties, which is why this works for some of the new tasks
+previously unseen by the system. And so what this means is that one should
+seed the initial state with some simple predictions capabilities, and not
+start with a completely dumb system, but once the initial state is seeded
+with some simple prediction capabilities together with the property that
+those predictions become better when given more time for the circuits to work, then the system should be
+able to gradually generalize this to better and better prediction capabilities
+for other tasks.)
+</P>
+<HR>
+
+<P>
+<strong>April 10, 2017 remark:</strong> This is a case of a situation
+of semi-supervised learning where:
+1) A simpler (faster) model is trained by a more complex (slower) model
+on unsupervised data.
+</P>
+
+<P>
+2) The more complex model used the simpler one as its part, and when
+the simpler one improves, the regularization properties of the situation
+and the way the complex model depends on the simple one are good enough
+to ensure that the complex one improves as well.
+</P>
+
+<P>
+This general schema can be applicable to a variety of situations and not
+just to neural models.
+</P>
+
+<P>
+The partial supervision mechanisms still need to be incorporated in all this.
+</P>
+
+<P>
+The situation in this essay is particularly intricate, because we have not just two models,
+but a family of models, and moreover a family of models parametrized by a continuous
+parameter (time).
+</P>
+
+<HR>
+
+<P>
+<strong>April 17, 2017 remark:</strong> We did see a very similar
+motive of local prediction of graduents in a relatively recent
+DeepMind work on synthetic gradients in a non-biorealistic setting:
+</P>
+
+<P><A HREF="https://deepmind.com/blog/decoupled-neural-networks-using-synthetic-gradients/">https://deepmind.com/blog/decoupled-neural-networks-using-synthetic-gradients/</A>
+</P>
+
+<P>
+<A HREF="https://arxiv.org/abs/1608.05343">https://arxiv.org/abs/1608.05343</A>
+</P>
+
+<P>
+<A HREF="https://arxiv.org/abs/1703.00522">https://arxiv.org/abs/1703.00522</A>
+</P>
+
+<HR>
+
+<P> Mishka --- March 26, 2017
+</P>
+
+<ADDRESS>
+Back to <A HREF="index.html">Mishka's home page</A>
+</ADDRESS>
+
+</body>
+
+</html>
