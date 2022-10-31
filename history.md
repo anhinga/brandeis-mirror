@@ -14,3 +14,8 @@ Therefore, I have created this "partial advanced mirror" which has a dual purpos
   * To enable advanced edits of the active parts of the site (to be backported to the original Brandeis site during my campus visits)
 
   * To eventully have an explicit publicly accessible backup of a large chunk of the site (or, perhaps, of the entire site eventually) 
+
+Only some of the links in the following files work:
+
+  * [index_history.html](index_history.html)
+  * [index_10.31.22.html](index_10.31.22.html)
