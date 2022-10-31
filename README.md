@@ -1,8 +1,8 @@
 # brandeis-mirror
 
-A partial mirror of my Brandeis website: https://www.cs.brandeis.edu/~bukatin
+A partial mirror of my Brandeis website: [https://www.cs.brandeis.edu/~bukatin](https://www.cs.brandeis.edu/~bukatin)
 
-This mirror URL: https://anhinga.github.io/brandeis-mirror/
+This mirror URL: [https://anhinga.github.io/brandeis-mirror](https://anhinga.github.io/brandeis-mirror)
 
 Starting from September 25, 2022:
   * edits to this website will be created here originally;
