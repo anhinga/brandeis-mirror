@@ -15,7 +15,7 @@ Therefore, I have created this "partial advanced mirror" which has a dual purpos
 
   * To eventully have an explicit publicly accessible backup of a large chunk of the site (or, perhaps, of the entire site eventually) 
 
-Only some of the links in the following files work:
+Only some of the links in the following pages work:
 
   * [index_history.html](index_history.html)
   * [index_10.31.22.html](index_10.31.22.html)
