@@ -1,0 +1,66 @@
+<html>
+
+<head>
+<TITLE> Mishka --- Understanding Recurrent Identity Networks </TITLE>
+</head>
+
+<body>
+<H3>Mishka -- Understanding Recurrent Identity Networks -- January 26, 2018
+</H3> 
+
+<HR>
+
+<P>Overviewing a remarkable recent Swiss paper which finds a simple solution 
+to vanishing gradients problem in recurrent networks:
+</P>
+
+<P>
+<A HREF="https://arxiv.org/abs/1801.06105">https://arxiv.org/abs/1801.06105</A>
+</P>
+
+<P>
+It is a very simple schema, and it is one of those cases when the question 
+"how comes this was not known for decades?" arises. 
+(Other cases when this question arises include AlphaZero (both Go and Chess) 
+and our own self-modifying neural nets based on vector flows.)
+</P>
+
+<P>
+I don't think this is a particularly well written paper - what the authors 
+say is that if one writes the recurrent part <B>H_next = ... + V*H_previous</B> 
+as <B>H_next = ... + (U+I)*H_previous</B>, where <B>U</B> and <B>V</B> 
+are square matrices and <B>I</B> is the identity matrix, then it 
+"encourages the network to stay close to the identity transformation", 
+and then things work nicely, with the added remarkable benefit of making possible 
+to use <B>ReLU</B> activation functions in the recurrent setting without things blowing up. 
+But they don't do a good job explaining why this rewriting encourages the network 
+to stay close to the identity transformation.
+</P>
+
+<P>
+I think the answer is regularization, especially explicit regularization on weights like 
+<B>L_2</B>, but possibly also implicit regularization which might be present in 
+some optimization methods. If a regularization encouraging small weights is applied 
+to elements of <B>U</B>, rather than elements of <B>V</B>, then this indeed would 
+encourage the network to stay close to the identity! 
+(When one scales this kind of network to large data set, one probably needs 
+to make sure that regularization (which is often associated with priors) 
+would not become vanishingly small compared to the influence of the data set, 
+otherwise this approach might stop working.)</P>
+
+<P>
+(Other than leaving the reader with the sense of mystery for why it all works, the paper is quite interesting and remarkable, both in its results, and in documenting how the authors discovered it. I certainly don't mean to diminish the value of their discovery here.)
+</P>
+
+<HR>
+
+<P> Mishka --- January 26, 2018
+</P>
+
+<ADDRESS>
+Back to <A HREF="index.html">Mishka's home page</A>
+</ADDRESS>
+
+</body>
+
+</html>
