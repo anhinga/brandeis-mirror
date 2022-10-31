@@ -25,6 +25,10 @@ Starting from September 25, 2022:
   * [consciousness_papers.html](consciousness_papers.html)
   * [essays.html](essays.html)
 
+### History of my Brandeis site and its GitHub mirror
+
+  * [history.md](history.md)
+
 ---
 
 _Work in progress_
