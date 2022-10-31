@@ -1,0 +1,67 @@
+<html>
+
+<head>
+<TITLE> Mishka --- Regularization in intrinsically sparse networks </TITLE>
+</head>
+
+<body>
+<H2>Mishka -- Regularization in intrinsically sparse networks -- March 10, 2019
+</H2> 
+
+<HR>
+
+<P>In 2017, Mocanu et al. pubslihed a remarkable neuroevolutionary scheme for training sparse neural nets (arxiv: 1707.04780, then appearing in Nature Communications 9 (19 June 2018), open source repository: 
+<A HREF="https://github.com/dcmocanu/sparse-evolutionary-artificial-neural-networks">https://github.com/dcmocanu/sparse-evolutionary-artificial-neural-networks</A> )
+</P>
+
+<P>
+One starts with initializing sparse layers with random connectivity and then trains by repeating the following 2-step cycle a number of times:</P>
+    <UL>
+    <LI>do some training,</LI>
+    <LI>delete a fraction of connections with weights closest to zero, and recreate random new connections instead of the deleted ones.</LI>
+</UL>
+
+<P>The work was done for feedforward neural nets and for restricted Boltzmann machines. For the case of restricted Boltzmann machines the authors also demonstrated the ability of the system to learn advantageous network topology, forming higher density of connections in the active zone and lower density of connections in the non-meaningful margins.
+</P>
+
+<HR>
+
+<P>In November 2018, Michael Klear implemented this scheme in PyTorch for feedforward neural nets and wrote a related blog post at 
+<A HREF="https://towardsdatascience.com/the-sparse-future-of-deep-learning-bce05e8e094a">https://towardsdatascience.com/the-sparse-future-of-deep-learning-bce05e8e094a</A>
+</P>
+
+<P>He demonstrated the ability of the system to learn the network topology contrasting the active zone and the margin for the case of feedforward neural nets.
+</P>
+
+<HR>
+
+<P>I became interested in this implementation in February 2019, because I wanted to experiment with this neuroevolutionary scheme, and because PyTorch is my favorite machine learning platform at the moment.</P>
+
+<P>When I looked more closely, I noticed the following strange effect: the results reported by Michael Klear for neural nets demonstrated inverse pattern of network topology learning compared to the results reported by Mocanu et al. for restricted Boltzmann machines. Namely, the density of connections in this case was lower in the active zone and higher in the margin.</P>
+
+<P>We will call the network topology learning demonstrated by Mocanu et al <strong>positive learning</strong>, and we will call the inverse pattern of the network topology learning emerging in the runs performed by Michael Klear <strong>negative learning</strong>. ("Negative" here does not a priori imply "bad", although as we shall see below, in <em>this series of experiments negative learning is usually associated with some overfitting/failure to generalize</em>.)</P>
+
+<HR>
+
+<P>The main conjecture I made was that the <strong>negative learning</strong> effect was related to the absence of regularization in the original code. The logic I followed was that in the absence of regularization, when the weights pointing from the outlying areas are created, they tend to remain unchanged by training. At the same time, meaningful connections are changed by training, and occasionally become small and therefore get eliminated more frequently.<P>
+
+<P>At the same time, if one were to add a sufficiently strong regularization encouraging smaller weights, then one would expect the connections which are not informative to the result to decrease on average more rapidly, than the connections which are informative.</P>
+
+<P>The experiments I have performed seem to confirm this conjecture. Namely, <strong>when one adds sufficiently strong reglarization, negative learning is replaced by positive learning, and the stronger regularization is, the more pronounced is this effect</strong>.</P>
+
+<P>For further details see
+<A HREF="https://github.com/anhinga/synapses/blob/master/regularization.md">https://github.com/anhinga/synapses/blob/master/regularization.md</A>.
+</P>
+
+<HR>
+
+<P> Mishka --- March 10, 2019
+</P>
+
+<ADDRESS>
+Back to <A HREF="index.html">Mishka's home page</A>
+</ADDRESS>
+
+</body>
+
+</html>
