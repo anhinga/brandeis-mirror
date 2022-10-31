@@ -20,6 +20,11 @@ Starting from September 25, 2022:
   * [distances_and_equalities.html](distances_and_equalities.html)
   * [papers.html](papers.html)
 
+### My essays and writings on the science of consciousness
+
+  * [consciousness_papers.html](consciousness_papers.html)
+  * [essays.html](essays.html)
+
 ---
 
 _Work in progress_
