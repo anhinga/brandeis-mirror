@@ -1,0 +1,350 @@
+<html>
+
+<head>
+<TITLE> Mishka --- Linear Models of Computation, Finally </TITLE>
+</head>
+
+<body>
+<H3>Mishka -- Linear Models of Computation, Finally  -- Dec 2015
+</H3> 
+
+<HR>
+
+<P><STRONG>Abstract.</STRONG>
+At the end of 2015, we finally have a model of computation
+which allows us to <I>continuously deform programs</I> and, moreover,
+to <I>represent large classes of programs by matrices of
+real numbers.</I>
+</P>
+
+<HR>
+
+<P><STRONG>Overview</STRONG>
+</P>
+
+<P>This is, in some sense, a continuation of my <A HREF="bio-sketch.html">bio
+sketch</A> written three years ago. Since 1984 we were studying
+continuous models of computations in hope to make the standard
+methods of applied mathematics to be applicable to spaces
+of programs. Those studies yielded a number of interesting mathematical
+results, but their original goal was not achieved until this year.
+</P>
+
+<P>This year we finally obtained a solution to this problem, 
+which looks fairly simple in retrospect. 
+In this essay I would like to do a few things.
+I would like to briefly overview the essence of the solution in question,
+then to overview the trajectory which led us to this solution
+over the course of the last few years, and to try to meditate on
+the question why a solution as simple as this one seems to appear so late
+in the game. 
+</P>
+
+<P>This development does seem to open new possibilities for automated software
+synthesis. How big the impact of that will be remains to be seen.
+</P> 
+
+<P>The materials on the topic are collected on my
+<A HREF="partial_inconsistency.html">Partial Inconsistency
+and Vector Semantics of Programming Languages</A> page.
+The reference paper is Michael Bukatin and Steve Matthews,
+<A HREF="https://easychair.org/publications/paper/Q4lW">Linear Models of Computation and Program Learning</A>,
+GCAI 2015, <I>EasyChair Proceedings in Computing</I>, <STRONG>36</STRONG>, 66-78.
+</P>
+
+<P><STRONG>The solution</STRONG>
+</P>
+
+<P>One wants to consider classes of computations which
+admit taking <I>linear combinations of execution runs.</I>
+Two well known large classes of computations with this property
+are <I>probabilistic sampling</I> and <I>generalized animation</I>.
+Both allow for enough higher-order constructions
+to make us believe that limiting consideration to either
+of these two classes is 
+not a restriction of generality compared to general-purpose computations.
+</P>
+
+<P>Since both probabilistic sampling and generalized animation
+represent stream-based computing architecture, it is natural
+to consider <I>dataflow programming</I> in this context. After experimenting
+with several different dataflow architectures, we arrived at
+the following. 
+</P>
+
+<P>
+If one takes
+a countable number of built-in stream transformers of one's choice
+(usually, one takes a finite number of those, and then
+considers a countable number of copies of each),
+one can then take each input to be a countable sum of all outputs.
+</P>
+
+<P>The way to think about this is to say that the set of
+built-in transformers defines a language, and the
+coefficients in the countable sums define a program
+in that language. So a program is defined by a countable-sized
+matrix; usually one requires that only a finite number
+of those coefficients are non-zero in order to fit all
+this into a finite machine (although infinite limits
+might be of interest too).
+</P>
+
+<P>Then one can change the program in a continuous fashion
+by continuously changing the matrix coefficients. Because
+a countable-size matrix has a countable number of matrix
+elements, one can compute the matrix elements themselves
+via the streams of real numbers computed by the
+program itself, thus enabling a variety of higher-order
+mechanisms (the continuous version of self-modifying code).
+</P>
+
+<P><STRONG>The history</STRONG>
+</P>
+
+<P>
+<STRONG>Mathematical part.</STRONG>
+One of the key obstacles for converting domains for
+denotational semantics into
+vector spaces was broken vector algebra for some
+key approximation domains, notably interval numbers
+where the addition was not invertible. That was one of
+the reasons I paused my studies of domain theory
+15 years ago. 
+</P>
+
+<P>
+The recent history of this development started with
+the talk, <A HREF="http://at.yorku.ca/c/b/e/u/83.htm">Inconsistent
+Partial Metric Spaces</A>, given by Steve Matthews in July 2012,
+where he suggested to consider negative self-distances for
+inconsistent elements.
+</P>
+
+<P>Then in October 2012 the three of us met at Akron, Ohio
+for American Mathematical Society Fall Central Sectional
+Meeting, and we realized that if we enrich interval numbers
+with the intervals of negative length then the result
+would be an additive group (it later turned out that this
+fact was rediscovered many, many times, the first discovery
+known to us being by Warmus in 1956; the resulting
+structure still remained not
+widely known; because there was no commonly accepted name
+for this structure, we retained our original name for it,
+<I>partially inconsistent interval numbers</I>). 
+During that meeting Ralph Kopperman pointed
+out bitopological significance of this fact in
+the context of group dual topologies, and in particular
+the anti-monotonic nature of the resulting negation operation,
+and the presence of bitopological involution.
+</P>
+
+<P>In February 2013, while preparing for the coming
+Summer Conference on Topology and its Applications,
+we learned about another bitopological
+phenomenon related to partial inconsistency, namely
+d-frames of Jung and Moshier, closely related to bilattices.
+In the same month, Anthony Seda again pointed my attention
+to the work of Kozen on semantics of probabilistic
+programs, which used spaces allowing negative values of
+probabilities, and the presence of those negative values
+of probabilities was tightly connected to Hahn-Jordan
+decomposition of measures into positive and negative parts.
+This Hahn-Jordan decomposition looked very similar to
+the decomposition pattern into positive and negative parts
+in bilattices, this pattern being ubiquitous in the studies
+of paraconsistent and non-monotonic logic.
+</P>
+
+<P>At that moment we realized that we had something remarkable
+on our hands, the new field unified by several common
+motives appearing multiple times: domains becoming
+tightly related to vector spaces, bitopology,
+bilattices, partial or graded contradictions,
+anti-monotonic inference, the pattern of
+decomposition into positive and negative parts,
+involutions, etc. For the lack of better name,
+we called that field <I>partial inconsistency landscape</I>.
+</P>
+
+<P>In the Fall of 2013, Steve Rodabaugh hosted us in
+Youngstown, Ohio and shared with us another 
+bitopological phenomenon relevant here: representation
+of lattice-valued bitopologies as topologies valued in
+bilattices. In 2014 we also learned about
+work on bicontinuous domains by Keimel. 
+In 2013 and 2014, we obtained some mathematical
+results of our own in this field, mostly related
+to the domain of arrows, computations with involutions,
+distances valued in partially inconsistent interval
+numbers, isomorphism between partially inconsistent
+interval numbers for reals extended with infinities
+and the d-frame of (lower, upper) bitopology on reals, etc.
+</P>
+
+<P>
+<STRONG>Applied part.</STRONG> 
+We still were not quite sure how would we go from denotational
+vector semantics such as semantics developed by Kozen back
+to the realm of programs and to practical things we wanted
+to do with programs using the power of vector spaces. 
+So we decided to turn to <I>linear
+operational semantics</I>, and to consider classes of computations
+admitting linear combinations of execution runs. The first
+joint preprint where we considered probabilistic sampling and
+generalized animations as examples of computations which
+had linear operational semantics appeared in March 2014.
+It was fortunate that we were familiar with the expressive
+power of animations and that methods based on Markov Chain
+Monte Carlo sampling and probabilistic programming were on
+upswing.
+</P>
+
+<P>In the Winter and Spring of 2015, thanks to the discussions
+with our colleagues working in biology, we realized that
+while conventional programming architectures didn't allow
+to represent regulation of gene expression in the context
+of genetic programming, <I>linear models of computations would
+allow to represent regulation of gene expression.</I>
+This was a strong indication that we were on the right
+track, given that our original motivation was to a large
+extent that continuous models of computations should allow
+for faster and more robust evolution of programs compared
+to brittle discrete software architectures.
+</P>
+
+<P>Another point which should be noted here is that methods
+of adaptive probabilistic sampling and methods of evolutionary
+computations seem to be closely related, but this does
+not seem to be widely known or acknowledged.
+</P>
+
+<P>Since both probabilistic sampling and generalized animation
+represent stream-based computing architecture, it is natural
+to consider <I>dataflow programming</I> in this context. 
+Between May and August of 2015 we experimented
+with several different dataflow architectures and arrived at
+the solution described above. These experiments are published
+as open source software together with associated demo videos
+and described in detail in two preprints posted on the
+<A HREF="partial_inconsistency.html">Partial Inconsistency
+and Vector Semantics of Programming Languages</A> page
+in July and August,
+so one can see from those preprints and from Fall 2015 slide decks
+how our thinking on this matter evolved.
+</P>
+
+<P><STRONG>What took so long?</STRONG>
+</P>
+
+<P>In retrospect, the obtained solution, both programming with
+streams admitting linear combinations, and the
+architecture of the "matrix machine", look very simple.
+</P>
+
+<P>
+So there is a natural question here: what prevented us
+from obtaining this solution earlier, even in the mid-1980-s?
+No special knowledge seems to be required to find this
+solution, and the domain theory does not seem to be
+required (although it might turn useful yet in this context
+in the future, because the potential is there to transfer
+the results and understanding from the partial inconsistency
+landscape to the discipline of programming with linear models).
+</P>
+
+<P>Also this solution seems to be new, 
+to the best of our current knowledge. If it turns out not
+to be new, then it is certainly not widely known.
+So, the question is, what prevented others from finding this solution,
+given how simple it looks (or what prevented them from
+disseminating it widely enough for it to become known)?
+</P>
+
+<P>In our case, I think, we were looking for a more sophisticated,
+more complicated solution. We did not expect it to be quite
+that simple (given that we wanted higher-order programming,
+and interpreters and compilers, and evolution of evolutionary schemes, 
+and evolution of evolution of evolutionary schemes, etc., to be accommodated).
+It is the existence of the partial inconsistency landscape with
+its remarkable mathematics which made us first suspect that
+linear models might be sufficient.
+</P>
+
+<P>
+We also did not realize that linear models of computations
+are so powerful. It is the advances of probabilistic programming
+community in the "sampling the samplers" paradigm demonstrated in
+recent years, and especially in 2014, which made us realize that
+adaptive probabilistic sampling is sufficiently powerful on its own
+as a software platform (because one can probabilistically sample
+all kinds of objects, including programs and their fragments), and this
+encouraged us to look more closely at the animations and to realize
+that adaptive animations are also sufficiently powerful
+(and essentially universal)
+as a software platform on their own (because one can "variably
+illuminate" all kinds of sophisticated structures and modulate
+their functioning in this fashion; in our case, we just ended up
+"variably illuminating" matrix elements on the fly, thus
+modifying the program).
+</P>
+
+<P>Why have not we encountered this solution before, authored by
+someone else? My experience so far is that
+the most prominent reaction to this story
+is a surprise that we are essentially bringing
+something very similar to the old method of
+analog computations back into the digital world, and that we
+can do it in such a way as to have full power of higher-order
+programming constructions (which was not the case with the
+traditional analog computers). Perhaps, this association,
+"software = digital = discrete", is so powerful that it has sufficiently
+decreased the chances of finding this solution or of taking it
+seriously.
+</P>
+
+<P><STRONG>Possible consequences</STRONG>
+</P>
+
+<P>This development does seem to open new possibilities for automated software
+synthesis. How big the impact of that will be remains to be seen.
+These new methods seem to have good potential both for
+automatically deriving adaptive
+interfaces connecting pre-existing software components, and for
+automatically deriving adaptive software from scratch.
+</P>
+
+<P>We are seeing an explosion of applied AI methods around us.
+It is certainly happening slower than I expected and predicted,
+but it is still happening very fast. However, the key
+question is what will be the speed and nature of automation of
+software engineering itself, and also of research.
+In this sense, the potential emergence of the new ways of
+software synthesis might be quite important.
+</P>
+
+<P>One question we might ask is how alien the AI aesthetics and the
+human aesthetics would be to each other. For me, the first indication
+that it might be possible for them to be not completely alien
+to each other on
+the fundamental level was emergence of Google's Deep Dream this
+Summer. In this sense, the fact that natural and digital animations
+of various kinds (including audio)
+are quite organic for the architecture based on linear models
+is encouraging in terms of the chances of having a situation
+when the AI aesthetics and the human aesthetics have something
+in common.
+</P>
+
+<HR>
+
+<P> Mishka --- December 2015
+</P>
+
+<ADDRESS>
+Back to <A HREF="index.html">Mishka's home page</A>
+</ADDRESS>
+
+</body>
+
+</html>
