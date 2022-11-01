@@ -1,0 +1,112 @@
+<html>
+<head>
+<TITLE> Michael Bukatin - Poor Man's Russificator v.2 </TITLE>
+</head>
+
+<body>
+
+<H1 align=center> The way of typing and saving Russian texts I prefer </H1>
+
+<P>
+To type Russian texts I currently prefer
+<a href="http://ourworld.compuserve.com/homepages/PaulGor/screen_r.htm">Russian
+Virtual Keyboard</a> by Paul Gorodyansky.
+</P>
+
+<P>
+To save Russian texts to a file I currently (June 2005) prefer pasting them
+into
+a platform-dependent editor selected 
+from <a href="http://www.alanwood.net/unicode/utilities_editors.html">this list</a>. 
+More specifically, I am
+currently using BabelPad for Windows, or Yudit for Linux for this purpose.
+</P>
+
+<P>
+The following (March 2005) is preserved for mostly historical reasons.
+</P>
+
+<hr>
+
+<H1 align=center> Russian UTF-8 <=> Translit </H1>
+
+The original Poor Man's Russificator, <a href="russify2.html">
+Win-1251, Koi8-R to VOLAPJUK </a>, is almost obsolete now, since
+almost all computers can now render Cyrillic fonts one way or another,
+and many text-based tools have transliteration rendering built into them.
+
+<P>
+So here comes Poor Man's Russificator, version 2, mostly for those
+who don't install a Russian keyboard driver for any of a variety of
+reasons and have situations
+when they don't want to use a virtual Russian keyboard, such
+as <a href="http://www.yandex.ru/keyboard_qwerty.html">Yandex Virtual
+Keyboard</a>. 
+</P>
+
+<P>
+Here are two C programs, <A HREF="cyr2lat.c">cyr2lat.c</A> and 
+<A HREF="lat2cyr.c">lat2cyr.c</A>. <b>cyr2lat</b> takes UTF-8 from
+the standard input and produces a certain version of Translit on
+the standard output. <b>lat2cyr</b> takes this version of Translit
+from the standard input and produces UTF-8 on the standard output.
+</P>
+
+<hr>
+
+<P>The main uses are: creating a Russian or mixed Russian-English
+text in Translit and converting it to UTF-8, or taking a Russian
+or mixed Russian-English text in UTF-8, converting it to Translit,
+editing it in Translit, and then converting it back to UTF-8.
+</P>
+
+<hr>
+
+<P>Hence the version of Translit which I picked is less than ideal
+for reading, but strives to be unambiguous and also to make sure
+that applying first <b>cyr2lat</b> and then applying <b>lat2cyr</b>
+to the result produces the UTF-8 file, identical to the original one.
+</P>
+
+<P>If you don't see Russian letters in the next paragraph, switch your
+browser to UTF-8.</P>
+
+<P>Among the specificity of the <b>cyr2lat</b> output:
+"Y" (Ы) is represented as "W", "E hard" (Э) is represented as "Eh",
+"Sch" (Щ) is represented as "S#", the hard sign is represented as "Q",
+"Kh" (Х) is represented as "X", and the
+soft sign is represented as \' (upper case) and ' (lower case).
+Also all latin letters, quotes, and backslashes are enclosed in
+backquotes, and each backquote is converted to backslash-backquote.
+</P>
+
+<P>Among the specificity of the <b>lat2cyr</b> interpretation of
+Translit are: letters "Yo", "Ya", "Yu" start from "Y", starting from
+"J" would yield 2 letters instead, "Ye" would yield the same result
+as "E", and while "W" is recommended instead of "Y" for (Ы), the use of
+"Y" in all other situations also would yield the same letter (Ы). The
+instances of "H" not busy in serving "Ch", "Sh", "Zh", and "Eh" would
+give the same result as "X". Backquotes <b>toggle</b> transliteration
+on and off (so enclose the English text in backquotes), except that
+backslash-backquote is converted into backquote and does not toggle anything.
+</P>
+
+<hr>
+
+<P>
+Please feel free to use and/or modify this program as you wish ---
+I am not responsible for it in any manner. However, if you notice a bug or
+have a suggestion related to this program, its "documentation", or 
+transliteration in general (including how to make a transliteration 
+more convenient,
+while preserving the good properties described above), my address is at the
+end of my home page (link below).
+</P>
+
+<ADDRESS>
+Back to <A HREF="index.html">Mishka's home page</A>
+</ADDRESS>
+
+</body>
+
+</html>
