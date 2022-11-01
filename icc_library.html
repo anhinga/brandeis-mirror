@@ -1,0 +1,300 @@
+<html>
+
+<head>
+<TITLE> Virtual Institute of Continuity in Computations - Library </TITLE>
+</head>
+
+<body>
+
+<H1 align="center">Virtual Institute of Continuity in Computations</H1>
+
+<H1 align="center">Library</H1>
+
+<HR>
+ <H3>CONSTRUCTION AREA - ENTER AT YOUR OWN RISK !!! </H3>
+
+<HR>
+
+Library - temporary closed
+
+<P> This is the most important area of our Institute.
+Here you will find what we believe is known and reasonably
+well understood about the continuous models and continuous
+nature of computations. The relevant
+long-term research goals are listed.
+We will also gradually accumulate
+selected pointers and references to the relevant
+literature here.
+
+<HR>
+
+<H3>Sections</H3>
+
+<UL>
+<LI><A HREF="#Nature">Continuous nature of computations</A>
+<LI><A HREF="#Motivation">Some of the reasons to study continuous 
+     models of computations</A>
+<LI><A HREF="#Results">Some results in continuous models
+     of computations</A>
+<LI><A HREF="#Goals">Selected open problems</A>
+<LI><A HREF="#Resources">References to literature and resources</A>
+</UL>
+
+<HR>
+
+<A NAME="Nature"></A><H3>Continuous nature of computations</H3>
+
+<P>
+When a software engineer or a computer scientist first hears
+about attempts to view digital programs as continuous objects, the typical
+first reactions is: "Your approach is absolute and total nonsense.
+We know that all digital computer systems are totally discrete.
+These systems can be viewed as transformers
+of bit sequences at the lowest level of granularity.
+In principle, we know everything about these systems, because
+their behavior is discrete and precise".
+</P>
+
+<P>
+Yet, upon careful look at the practice and theory of computations,
+one observes a number of continuity phenomena. One of the most
+important continuity phenomena comes from the everyday 
+contemporary practice of creation and use of software products.
+Virtually all software
+products used today contain a number of bugs - leading to refusal
+to work, crashes, and incorrect processing of data. Yet for a usable
+software product these unpleasant effects are observed relatively
+infrequently - most of the time the product works satisfactory.
+What we should say here is that the real product is sufficiently close
+to the ideal product, close enough to be used in lieu of the unavailable
+ideal product. This is a phenomenon of continuity. 
+</P>
+
+<P>This continuity
+results from the process of testing and amending the software
+and is crucial for our ability to use any software at all.
+The ability to introduce relatively small improvements into software
+is also a phenomenon of continuity.
+Moreover, it is quite possible that the ideal product cannot
+exist at all (e.g. if the specifications are for an undecidable
+problem), yet we still can consider models which contain representatives
+for such ideal products and for their real-life approximations.
+</P>
+
+<P>
+Another evidence of continuity in computations comes from the
+research in the effective versions of mathematical analysis,
+e.g. constructive analysis. It turns out that all constructive
+functions from constructive real numbers to constructive real
+numbers must be continuous. It is not difficult to understand
+why computations at the points of discontinuity cannot be
+performed correctly. If one has to deal with non-continuous
+functions, they have to be partially defined - points of
+discontinuity cannot belong to their domain.
+</P>
+
+<P>
+On the more abstract level one should point out the close
+connections between intuitionistic logic and computability
+together with the topological nature of the models for intuitionistic
+logical calculi. See also our <A HREF="#Results">Results</A>
+section for more examples.
+</P>
+
+<HR>
+
+<A NAME="Motivation"></A>
+<H3>Some of the reasons to study continuous models of computations</H3>
+
+<UL>
+<LI> <strong>Power of continuous mathematics.</strong>
+<P>Classical continuous mathematics is proven to be extremely
+efficient in natural sciences, in particular, in physics.
+Eugene Wigner even writes about "uncomprehensible efficiency
+of mathematics in natural sciences" (in inverse translation
+from Russian). This can be explained, in part, by extremely
+long history of development of classical continuous mathematics -
+more than 2000 years. Continuous mathematics
+reached full maturity during the 19th century.
+</P>
+
+<P>
+On the other hand, discrete mathematics is considerably younger,
+if one does not count the number theory. Systematic
+studies of non-numerical
+discrete structures, like graphs and trees, started
+seriously only in the 19th century, although the earlier occasional
+use occurred. This might partially explain why the methods
+of discrete math demonstrated considerably less power
+so far. One of the important arguments in favor of continuous
+models of computations is that they may enable us to apply the
+"uncomprehensible efficiency" 
+of continuous math to the field of computing.
+</P>
+
+<LI> <strong>Continuing crisis in software development.</strong>
+<P>
+In the end of 1960-s computer scientists recognized the
+crisis in software development. Analyzing the experience of
+designing, developing, and using software systems they
+concluded that there are deep reasons for all the nasty bugs,
+broken schedules, and other troubles associated with the
+software development. They named two main interrelated reasons -
+high complexity of software together with our inability to
+manage this complexity, and also the lack of a proper
+mathematical foundation. Software engineering did not reach
+the maturity of, say, bridge engineering. Bridge engineers
+know their physics, their differential equations, their
+material science, and they can validate the design and ensure
+that a bridge will not break with high reliability.
+The corresponding methods in software engineering were
+underdeveloped and inadequate.
+</P>
+
+<P>
+Unfortunately after 25+ years the situation in software engineering
+remains quite unsatisfactory. Some marginal improvements
+came first from the introduction of structured
+programming, then - modern debuggers
+and interactive development environments, and lately -
+object-oriented programming. These developments allowed
+to increase somewhat the productivity of programmers and the quality
+of software. Yet this is a minor quantitative improvement,
+and it is negligibly small compared with the progress
+made in the hardware industry. Paradoxically, this inability
+to design software well is what makes the software industry 
+and job market so
+lucrative. It is the fact that we lack the reliable
+semi-automatic technology to produce software,
+that creates all these jobs in crafting and repairing
+the software by antic, ad hoc methods. Correspondingly,
+software accounts for the bulk of the cost of
+computer systems, so that is where the money currently are.
+</P>
+
+<P>
+More advanced mathematical methods
+currently involve very cumbersome logical manipulations,
+they are very expensive, and the resulting quality and
+productivity is questionable. Why the progress in this
+field is so slow, if the need was recognized more than
+25 years ago? One possible answer might be that the
+problem is just too complicated, and no radical solution
+is possible. Even if this is a part of the truth, it does
+not seem to be all the truth, as at least three adverse
+factors which contributed to this lack of progress can
+be identified.
+</P>
+
+<P>
+As usual, these adverse factors are not orthogonal,
+instead they feed each other and produce strong
+cumulative effect. Yet, for simplicity we list them
+separately. First, the bulk of efforts was directed
+towards using the methods of discrete math.
+It is likely that discrete math just does not
+possess the necessary power to solve the problems
+which are so complicated. The only
+significant opening for the use of continuous math was
+represented by the theory of domains for denotational
+semantics due mainly to Dana Scott. Unfortunately,
+even subsequent development of this important subfield
+leaned towards the discrete side, in particular, there
+were no serious efforts to develop <strong>functional
+analysis on domains</strong>. 
+</P>
+
+<P>
+This leads us to the second
+adverse factor, which was too strong leaning to make
+so called "applied" work instead of fundamental research.
+As a result, the basic techniques remain undeveloped,
+while "applied" papers, based on substandard foundations,
+remain of no consequence to practice. Indeed, the only
+serious application of denotational semantics is so far the
+continuation-passing style in functional programming -
+not much indeed. This comes, in part, from the unreasonable
+funding practices which encourage immediate applicability.
+It would be much more reasonable to shift more of the responsibility
+for this kind of applied research to the corporations which
+stand to profit from it, and to use government funding
+for more long-term and risky, but necessary investment -
+fundamental research.
+</P>
+
+<P>
+The third adverse factor is the excessive complexity
+of the computer science discourse in this field.
+Complexity does not mean abstraction, complexity, first
+of all, means bulky, antiaesthetical, unstructured, and, thus, unusable
+constructions. Proper abstractions, especially when accompanied
+by the efforts to explain and clarify intuition and ideas involved,
+should reduce complexity, not increase it. It is unlikely,
+that mathematical abstractions will allow us to control
+software complexity, if their own complexity is almost
+unmanageable.
+</P>
+
+<LI> <strong>Approximation of ideal solutions as inevitable reality.</strong>
+<P>
+Among other things we are going to explain, that precise models
+describing the behavior of every single bit are not the most promising.
+Instead, we should adopt a more natural science-like approach -
+think that we are studying a natural system experimentally.
+</P>
+
+<P>
+Construction in progress...
+</P>
+
+<LI> <strong>Need in more systematic approaches to machine learning.</strong>
+<P>
+Among other things we are going to explain the power of optimization
+techniques for problems from continuous math versus difficulties
+of discrete optimization.
+</P>
+
+<P>
+We are also going to introduce the notion of systematic versus
+ad hoc machine learning. The systematic machine learning method allows
+to optimize over a Turing-equivalent set of programs and is
+self-applicable. If a machine learning method cannot be used
+for self-improvement, then it is ad hoc.
+</P>
+
+<P>
+Construction in progress...
+</P>
+
+</UL>
+
+<HR>
+
+<A NAME="Results"></A>
+<H3>Some results in continuous models of computations</H3>
+
+Construction in progress...
+
+<HR>
+
+<A NAME="Goals"></A>
+<H3>Selected open problems</H3>
+
+Construction in progress...
+
+<HR>
+
+<A NAME="Resources"></A>
+<H3>References to literature and resources</H3>
+
+Construction in progress...
+
+<HR>
+
+<ADDRESS>
+Back to the <A HREF="icc_lobby.html">lobby</A> of the Institute
+</ADDRESS>
+
+</body>
+
+</html>
