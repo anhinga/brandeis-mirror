@@ -18,4 +18,4 @@ Therefore, I have created this "partial advanced mirror" which has a dual purpos
 Only some of the links in the following pages work:
 
   * [index_history.html](index_history.html)
-  * [index_10.31.22.html](index_10.31.22.html)
+  * [index_11.20.22.html](index_11.20.22.html)
