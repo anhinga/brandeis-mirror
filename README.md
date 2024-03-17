@@ -24,6 +24,7 @@ Starting from September 25, 2022:
 
   * [consciousness_papers.html](consciousness_papers.html)
   * [essays.html](essays.html)
+  * [transformer_revolution.html](transformer_revolution.html)
 
 ### History of my Brandeis site and its GitHub mirror
 
